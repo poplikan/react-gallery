@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
-import './GalleryCard.scss';  // если есть отдельный SCSS для карточки
 
 function GalleryCard({ title, year, artist, location, imageUrl }) {
     const [aspectRatio, setAspectRatio] = useState(1.5);
-    const [imageLoaded, setImageLoaded] = useState(false);
     
     useEffect(() => {
         if (!imageUrl) return;
@@ -12,10 +10,8 @@ function GalleryCard({ title, year, artist, location, imageUrl }) {
         img.onload = () => {
             const ratio = img.width / img.height;
             setAspectRatio(ratio);
-            setImageLoaded(true);
         };
         img.onerror = () => {
-            // Если картинка не грузится, используем стандартное соотношение
             setAspectRatio(1.5);
         };
         img.src = imageUrl;
@@ -29,7 +25,6 @@ function GalleryCard({ title, year, artist, location, imageUrl }) {
                 '--ratio': aspectRatio 
             }}
         >
-            <div className="art-card__image"></div>
             <div className="art-card__footer">
                 <div className="art-card__info">
                     <div className="art-card__divider"></div>
