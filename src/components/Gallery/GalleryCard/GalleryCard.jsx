@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './Gallery.scss';
 
 function GalleryCard({ title, year, artist, location, imageUrl }) {
     const [aspectRatio, setAspectRatio] = useState(1.5);
