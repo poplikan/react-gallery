@@ -41,7 +41,7 @@
         width: 100%;
         height: 100%;
         background-image: var(--card-bg);
-        background-size: contain;  // ← ИСПРАВЛЕНО: contain вместо cover
+        background-size: cover;  // ← ИСПРАВЛЕНО: contain вместо cover
         background-position: center;
         background-repeat: no-repeat;
         transition: transform $transition-slow;
